@@ -11,7 +11,7 @@ public class CarFactory {
      * 生产MoveAble
      * @return MoveAble
      */
-    public static MoveAble createCar(){
+    public static MoveAble create(){
         //before processing  比如 记录日志
         System.out.println("a car is created");
         return new Car();

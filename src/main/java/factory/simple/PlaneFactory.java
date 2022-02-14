@@ -11,7 +11,7 @@ public class PlaneFactory {
      * 生产MoveAble
      * @return MoveAble
      */
-    public static MoveAble createPlane(){
+    public static MoveAble create(){
         System.out.println("a plane is created");
         return new Plane();
     }
