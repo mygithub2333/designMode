@@ -10,9 +10,11 @@ package factory.simple;
  */
 public class Main {
     public static void main(String[] args) {
-        MoveAble car = CarFactory.create();
+        MoveAbleFactory c = new CarFactory();
+        MoveAble car = c.create();
         car.go();
-        MoveAble plane = PlaneFactory.create();
+        MoveAbleFactory p = new PlaneFactory();
+        MoveAble plane = p.create();
         plane.go();
     }
 }

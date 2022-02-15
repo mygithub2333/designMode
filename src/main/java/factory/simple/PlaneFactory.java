@@ -5,13 +5,14 @@ package factory.simple;
  * @date 2022/2/14
  * 飞机工厂类
  */
-public class PlaneFactory {
+public class PlaneFactory implements MoveAbleFactory {
 
     /**
      * 生产MoveAble
      * @return MoveAble
      */
-    public static MoveAble create(){
+    @Override
+    public MoveAble create(){
         System.out.println("a plane is created");
         return new Plane();
     }
