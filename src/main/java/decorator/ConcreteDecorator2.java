@@ -6,6 +6,8 @@ package decorator;
  */
 public class ConcreteDecorator2 extends Decorator {
 
+    private String name = "里脊";
+
     private final int price = 2;
 
     public ConcreteDecorator2(Component component) {
