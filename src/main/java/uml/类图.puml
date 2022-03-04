@@ -1,0 +1,62 @@
+@startuml
+'https://plantuml.com/class-diagram
+
+abstract class AbstractList
+abstract AbstractCollection
+interface List
+interface Collection
+
+List <|-- AbstractList
+Collection <|-- AbstractCollection
+
+Collection <|- List
+AbstractCollection <|- AbstractList
+AbstractList <|-- ArrayList
+
+class ArrayList {
+Object[] elementData
+size()
+}
+
+enum TimeUnit {
+DAYS
+HOURS
+MINUTES
+}
+'泛化或继承关系
+Parson <|-- Student
+'实现关系
+User <|.. Student
+'依赖关系
+Leg <. User
+Leg <. Student
+'关联关系
+Leg <- Parson
+'聚合关系
+clazz o- Student
+abstract class Parson{
+    -Leg leg
+    {abstract} +void speak()
+}
+
+interface User{
+    +void go(Leg leg)
+}
+
+class Leg
+
+class Student {
+   -String name
+   -int age
+   {static} -int no
+   {abstract} -void speak()
+   +void go(Leg leg)
+}
+class clazz{
+   -List<Student> students
+}
+'练习:动物衍生关系类图
+
+
+
+@enduml

@@ -6,6 +6,7 @@ import java.util.List;
 /**
  * @author fwx
  * @date 2022/2/24
+ * 责任链模式
  */
 public class Main {
     public static void main(String[] args) {
@@ -96,7 +97,7 @@ class URLFilter implements Filter{
 }
 
 class FilterChain implements Filter{
-    List<Filter> filters = new ArrayList<>();
+    List<Filter> filters = new ArrayList<Filter>();
 
     public FilterChain add(Filter f){
         filters.add(f);
