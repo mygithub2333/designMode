@@ -12,6 +12,8 @@ import com.neko233.lightrail.util.MyDataSource;
 import singleton.Multitcm;
 
 import javax.sql.DataSource;
+import java.net.InetAddress;
+import java.net.UnknownHostException;
 import java.sql.*;
 import java.util.List;
 import java.util.Properties;
@@ -24,7 +26,16 @@ import static com.alibaba.druid.pool.DruidDataSourceFactory.*;
  * @date 2022/2/25
  */
 public class Main {
-    public static void main(String[] args) throws Exception {
+    public static void main(String[] args) throws UnknownHostException {
+        InetAddress localHost = InetAddress.getLocalHost();
+        String address = localHost.getHostAddress();
+        String hostName = localHost.getHostName();
+        System.out.println(address);
+        System.out.println(hostName);
+
+    }
+
+    private static void test() throws Exception {
         RailPlatform lightRailPlatform = RailPlatformFactory.createLightRailPlatform(MyDbSource.getDataSource());
         String build = SqlLightRail.selectTable("user as u").select("*").join(JoinCondition.builder().join("shop as s").on("u.id=s.user_id")).groupBy("u.id").build();
         System.out.println(build);
