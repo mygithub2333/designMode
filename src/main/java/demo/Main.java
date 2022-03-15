@@ -9,6 +9,7 @@ import com.neko233.lightrail.builder.SelectSqlBuilder;
 import com.neko233.lightrail.condition.JoinCondition;
 import com.neko233.lightrail.pojo.User;
 import com.neko233.lightrail.util.MyDataSource;
+import org.springframework.beans.factory.BeanFactory;
 import singleton.Multitcm;
 
 import javax.sql.DataSource;
@@ -26,13 +27,15 @@ import static com.alibaba.druid.pool.DruidDataSourceFactory.*;
  * @date 2022/2/25
  */
 public class Main {
-    public static void main(String[] args) throws UnknownHostException {
+    public static void main(String[] args) {
+    }
+
+    private static void inetAddrTest() throws UnknownHostException {
         InetAddress localHost = InetAddress.getLocalHost();
         String address = localHost.getHostAddress();
         String hostName = localHost.getHostName();
         System.out.println(address);
         System.out.println(hostName);
-
     }
 
     private static void test() throws Exception {
