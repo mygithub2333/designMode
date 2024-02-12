@@ -38,14 +38,12 @@
             <version>5.3.14</version>
         </dependency>
 
-
-
         <dependency>
             <groupId>com.singularsys</groupId>
             <artifactId>jep</artifactId>
             <version>4.0</version>
             <scope>system</scope>
-            <systemPath>F:/软件/download/jep-java-4.0-trial/jep-java-4.0-trial.jar</systemPath>
+            <systemPath>${project.basedir}/lib/jep-java-4.0-trial.jar</systemPath>
         </dependency>
     </dependencies>
 </project>
